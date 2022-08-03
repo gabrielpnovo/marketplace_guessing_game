@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Marketplace Virtual - Jogo Advinha</title>
+
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="estilo_jogo.css" />
+
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <header>
+			<div class="cabecalho">
+                <button class="cabecalho__menu" aria-label="Menu"><i></i></button>
+				<h1><img src="imagens/bike-logo.png" class="imagem-logo"></h1>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+						<li><a href="produtos.html">Produtos</a></li>
+						<li><a href="contato.html">Contato</a></li>
+                        <li><a class="jogue-ganhe" href="jogue_ganhe.html">Jogue e Ganhe</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+        <!-- <button class="teste">popup</button> -->
+
+        <div class="menu-lateral cabecalho-esconde">
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="contato.html">Contato</a>
+            <a class="jogue-ganhe opcao-ativa" href="jogue_ganhe.html">Jogue e Ganhe</a>
+        </div>
+
+        <div class="popup hide-popup">
+            <p class="cabecalho-popup">Msg do Jogo</p>
+            <button class="fechar">x</button>
+            <div class="msg-popup">
+                
+            </div>
+            <button class="ok-popup">Ok</button>
+        </div>
+
+        <main class="principal">
+            <section class="container-sorteio">
+                <div class="instrucoes">
+                    <button class="button-duvida" id="duvida">?</button>
+                    <div class="container-instrucoes">
+                        <p class="titulo-instrucao">Bem vindo ao Jogo de Adivinhação!</p>
+                        <hr>
+                        <p class="subtitulo-instrucao">O jogo funciona da seguinte maneira:</p>
+                        <ol class="lista-instrucoes">
+                            <li class="item-instrucoes">Você inicia o jogo com 50% de desconto;</li>
+                            <li class="item-instrucoes">A cada letra errada, você perde 10% de desconto;</li>
+                            <li class="item-instrucoes">A cada dica selecionada, você também perde 10% de desconto;</li>
+                            <li class="item-instrucoes">Para iniciar, basta pressionar o botão "Sortear Palavra";</li>
+                            <li class="item-instrucoes">Para selecionar a letra, basta defini-la no combobox "Seleciona Letra" e, então, pressionar o botão "Escolher Letra".</li>
+                        </ol>
+                    </div>
+                    <!-- <div class="texto-instrucoes">Instruções</div> -->
+                </div>
+
+                <div class="secao-desconto">
+                    <p class="texto-desconto">Desconto Atual:</p>
+                    <p class="valor-desconto">50%</p>
+                </div>
+
+                <div class="palavra-sorteada"></div>
+                <button class="button-sortear">Sortear Palavra</button>
+                <hr>
+
+                <div class="container-teclado">
+                    <button class="botao-teclado">Q</button>
+                    <button class="botao-teclado">W</button>
+                    <button class="botao-teclado">E</button>
+                    <button class="botao-teclado">R</button>
+                    <button class="botao-teclado">T</button>
+                    <button class="botao-teclado">Y</button>
+                    <button class="botao-teclado">U</button>
+                    <button class="botao-teclado">I</button>
+                    <button class="botao-teclado">O</button>
+                    <button class="botao-teclado">P</button>
+                    <button class="botao-teclado">A</button>
+                    <button class="botao-teclado">S</button>
+                    <button class="botao-teclado">D</button>
+                    <button class="botao-teclado">F</button>
+                    <button class="botao-teclado">G</button>
+                    <button class="botao-teclado">H</button>
+                    <button class="botao-teclado">J</button>
+                    <button class="botao-teclado">K</button>
+                    <button class="botao-teclado">L</button>
+                    <button class="botao-teclado">Ç</button>
+                    <button class="botao-teclado">Z</button>
+                    <button class="botao-teclado">X</button>
+                    <button class="botao-teclado">C</button>
+                    <button class="botao-teclado">V</button>
+                    <button class="botao-teclado">B</button>
+                    <button class="botao-teclado">N</button>
+                    <button class="botao-teclado">M</button>
+                </div>
+
+            </section>
+
+            <section class="container-dicas">
+                <button class="button-padrao button-dica">Quero uma Dica</button>
+                <div class="espaco-dica">
+                    <p class="titulo-dica">Dica 1</p>
+                    <p class="texto-dica"></p>
+                </div>
+                <div class="espaco-dica">
+                    <p class="titulo-dica">Dica 2</p>
+                    <p class="texto-dica"></p>
+                </div>
+                <div class="espaco-dica">
+                    <p class="titulo-dica">Dica 3</p>
+                    <p class="texto-dica"></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Copyright &copy; 2022 GPN | Sua Loja de Bike</p>
+        </footer>
+        
+
+        <script src="main_jogo.js" ></script>
+    </body>
+</html>

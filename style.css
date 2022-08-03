@@ -1,0 +1,430 @@
+@font-face {
+    font-family: 'icones';
+    src: url(./font/icones.ttf);
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Oswald', sans-serif, 'icones';
+    background-color: white;
+    color: black;
+}
+
+.pagina-home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(imagens/bike4.png);
+    /* Essa propriedade faz com que a imagem esteja contiga dentro do tamanho definido */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media screen and (max-width: 480px) {
+    .pagina-home {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(imagens/bike3-mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        /* background-size: contain; */
+    }
+}
+
+main {
+    position: relative;
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 5em;
+}
+
+.titulo-pagina {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.8em 0;
+    clear: left;
+}
+
+footer {
+    /* Utiliza-se o valor "absolute" e a propriedade "min-height" na tag "html" para garantir que o footer fique no final da página e não ao final do conteúdo apenas */
+    position: absolute;
+    bottom: 0;
+    margin-top: 2em;
+    height:20px;
+    margin-top: auto;
+    width: 100%;
+	text-align: center;
+	background: url("imagens/background.jpg");
+	padding: 20px 0;
+    color: white;
+}
+
+/* ==================== CABEÇALHO ==================== */
+header {
+	background: black;
+	padding: 20px 0;
+    position: sticky;
+    overflow: hidden;
+    width: 100%;
+    top: 0;
+    margin-bottom: 1.5em;
+    z-index: 999;
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        margin: 0;
+    }
+}
+
+.cabecalho {
+    position: relative;
+    color: white;
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho__menu {
+    display: none;
+}
+
+.menu-lateral {
+    display: none;
+}
+
+.jogue-ganhe {
+    color: red;
+}
+
+@media screen and (max-width: 480px) {
+    .cabecalho {
+        display: block;
+    }
+
+    .cabecalho h1 {
+        text-align: center;
+    }
+
+    .cabecalho__menu {
+        position: absolute;
+        display: inline;
+    }
+
+    .cabecalho__menu i::before{
+        content: "\e904";
+        font-size: 24px;
+    }
+
+    .menu-lateral {
+        position: fixed;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 60vw;
+        height: 100vh;
+        background-color: black;
+        z-index: 100;
+        color: white;
+    }
+
+    .menu-lateral a{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        height: 30px;
+        padding: 5px 0px 5px 10px;
+    }
+
+    .cabecalho-esconde {
+        display: none;
+    }
+
+    .opcao-ativa {
+        border-left: 4px solid white;
+    }
+}
+
+.imagem-logo {
+    height: 80px;
+    width: 80px;
+}
+
+@media screen and (max-width: 480px) {
+    .imagem-logo {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+nav {
+    position: absolute;
+    right: 0;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+nav a {
+	text-transform: uppercase;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+nav a:hover {
+    color: #0070C0;
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        display: none;
+    }
+}
+
+/* ==================== HOME ==================== */
+
+.principal {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+}
+
+@media screen and (max-width: 480px) {
+    /* main {
+        width: 100vw;
+    } */
+
+    .principal {
+        top: 0;
+        left: 35%;
+        transform: translateX(-50%);
+    }
+}
+
+.slogan {
+    font-size: 5em;
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    padding: 0.3em 0;
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    .slogan {
+        font-size: 2rem;
+    }
+}
+
+.pilares {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.texto-pilares {
+    text-align: center;
+    margin: 10px 0 25px 0;
+}
+
+/* ==================== SOBRE ==================== */
+
+.img-sobre {
+    float: left;
+    margin-right: 1em;
+    max-width: 50%;
+}
+
+.item-historia {
+    margin-bottom: 2.5em;
+}
+
+.historia-titulo {
+    margin-bottom: 0.5em;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.imagem-historia {
+    width: 45%;
+    margin-top: 8px;
+    border: 1px solid #000000
+}
+
+@media screen and (max-width: 480px) {
+    .imagem-historia {
+        width: 100%;
+    }
+}
+
+/* ==================== PRODUTOS ==================== */
+
+.body-produtos {
+    background-color: white;
+}
+
+.main-produto {
+    color: black;
+}
+
+hr {
+    margin: 1em;
+}
+
+.tipo-produto {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.6em;
+}
+
+.produtos {
+    display: flex;
+    justify-content: space-around;
+    vertical-align: top;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .produtos {
+        flex-wrap: wrap;
+    }
+}
+
+.produto-nome {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.produtos li {
+    width: 30%;
+    margin: 0 1.5%;
+    padding: 1em 0;
+	box-sizing: border-box;
+    border: 2px solid #000000;
+	border-radius: 10px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+    .produtos li{
+        width: 80%;
+        margin-bottom: 16px;
+    }
+}
+
+.produtos li:hover {
+	border-color: #C78C19;
+}
+
+.produtos li:hover h2 {
+	font-size: 2.3em;
+}
+
+.produtos li:active {
+	border-color: #088C19;	
+}
+
+.imagens-produtos {
+    margin-top: 16px;
+    width: 80%;
+    background-size: cover;
+}
+
+.produto-descricao {
+    font-size: 1.2em;
+    padding: 0.5em;
+}
+
+.produto-preco {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.botao {
+    background-color: #0070C0;
+    color: white;
+    font-weight: bold;
+    border: 0px solid #000;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.botao:hover {
+    background-color: #015088;
+    cursor: pointer;
+}
+
+/* ==================== CONTATO ==================== */
+
+.input-padrao {
+    display: block;
+    width: 40%;
+    padding: 8px;
+    /* padding-left: 8px; */
+    height: 25px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+}
+
+.input-padrao::placeholder {
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 480px) {
+    .input-padrao {
+        width: 80%;
+    }
+}
+
+.formulario-contato label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#mensagem {
+    height: 100px;
+}
+
+.contato {
+    margin-bottom: 20px;
+}
+.contato p {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.contato input {
+    margin-left: 5px;
+}
+
+.contato label {
+    margin-bottom: 10px;
+}
+
+.checkbox {
+    margin: 10px 0;
+}
+
+.button-formulario {
+    background-color: #0070C0;
+    color: white;
+    font-weight: bold;
+    border: 0px solid #000;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}

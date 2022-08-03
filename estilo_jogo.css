@@ -1,0 +1,531 @@
+@font-face {
+    font-family: 'icones';
+    src: url(./font/icones.ttf);
+}
+
+/* p {
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    font-family: 'Oswald', sans-serif, 'icones';
+    background-color: white;
+    color: black;
+}
+
+/* ==================== CABEÇALHO ==================== */
+header {
+	background: black;
+	padding: 20px 0;
+    position: sticky;
+    overflow: hidden;
+    width: 100%;
+    top: 0;
+    margin-bottom: 1.5em;
+    z-index: 999;
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        margin: 0;
+    }
+}
+
+.cabecalho {
+    position: relative;
+    color: white;
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho__menu {
+    display: none;
+}
+
+.menu-lateral {
+    display: none;
+}
+
+.jogue-ganhe {
+    color: red;
+}
+
+@media screen and (max-width: 480px) {
+    .cabecalho {
+        display: block;
+    }
+
+    .cabecalho h1 {
+        text-align: center;
+    }
+
+    .cabecalho__menu {
+        position: absolute;
+        display: inline;
+    }
+
+    .cabecalho__menu i::before{
+        content: "\e904";
+        font-size: 24px;
+    }
+
+    .menu-lateral {
+        position: fixed;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 60vw;
+        height: 100vh;
+        background-color: black;
+        z-index: 100;
+        color: white;
+    }
+
+    .menu-lateral a{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        /* color: white; */
+        height: 30px;
+        padding: 5px 0px 5px 10px;
+    }
+
+    .cabecalho-esconde {
+        display: none;
+    }
+
+    .opcao-ativa {
+        border-left: 4px solid red;
+    }
+}
+
+.imagem-logo {
+    height: 80px;
+    width: 80px;
+}
+
+@media screen and (max-width: 480px) {
+    .imagem-logo {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+nav {
+    position: absolute;
+    right: 0;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+nav a {
+	text-transform: uppercase;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+nav a:hover {
+    color: #0070C0;
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        display: none;
+    }
+}
+
+footer {
+    /* Utiliza-se o valor "absolute" e a propriedade "min-height" na tag "html" para garantir que o footer fique no final da página e não ao final do conteúdo apenas */
+    position: relative;
+    bottom: 0;
+    margin-top: 2em;
+    height:20px;
+    /* margin-top: auto; */
+    width: 100%;
+	text-align: center;
+	background: url("imagens/background.jpg");
+	padding: 20px 0;
+    color: white;
+}
+
+/* ==================== FIM CABEÇALHO ==================== */
+
+.popup {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 250px;
+    width: 500px;
+    background-color: #357ec7;
+    z-index: 900;
+    border: 1px solid black;
+    border-radius: 10px 10px 0 0;
+}
+
+@media screen and (max-width: 480px) {
+    .popup {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+.cabecalho-popup {
+    margin-top: 3px;
+    color: lightgray;
+    font-weight: bold;
+}
+
+.fechar {
+    text-align: center;
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    background-color: #ff605c;
+    height: 22px;
+    width: 22px;
+    right: 0;
+    top: 0;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    padding: 1px 7px 2px 6px;
+}
+
+.msg-popup {
+    position: relative;
+    box-sizing: border-box;
+    color: black;
+    padding: 10px;
+    background-color: lightgray;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 95%;
+    height: 80%;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+    .msg-popup {
+        width: 90%;
+        height: 75%;
+    }
+}
+
+.texto-popup {
+    margin: 15px;
+}
+
+@media screen and (max-width: 480px) {
+    .texto-popup {
+        font-size: 11px;
+    }
+}
+
+.ok-popup {
+    position: absolute;
+    bottom: 25px;
+    height: 30px;
+    width: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.hide-popup {
+    display: none;
+}
+
+.principal {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 480px) {
+    .principal {
+        flex-wrap: wrap;
+    }
+}
+
+.container-sorteio {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .container-sorteio {
+        height: 55%;
+    }
+}
+
+.button-duvida {
+    color: white;
+    height: 35px;
+    line-height: 35px;
+    width: 35px;
+    text-align: center;
+    border: none;
+    border-radius: 100%;
+    background-color: darkgreen;
+}
+
+@media screen and (max-width: 480px) {
+    .button-duvida {
+        height: 25px;
+        line-height: 25px;
+        width: 25px;
+    }
+}
+
+.instrucoes {
+    position: absolute;
+    /* left: 8px; */
+}
+
+.container-instrucoes {
+    position: absolute;
+    display: none;
+    width: 250px;
+    padding: 32px;
+    background-color: black;
+    z-index: 100;
+}
+
+.container-instrucoes hr {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.item-instrucoes {
+    left: 0px;
+    list-style-type: upper-roman;
+}
+
+.titulo-instrucao {
+    text-align: center;
+    font-weight: bold;
+}
+
+.altera {
+    font-size: 2rem;
+    /* font-weight: bold; */
+}
+
+.class-hover {
+    background-color: black;
+    display: inline-block;
+    top: 17px;
+    opacity: 0.85;
+    color: white;
+    left: 17.5px;
+}
+
+@media screen and (max-width: 480px) {
+    .class-hover {
+        top: 12.5px;
+        left: 25px;
+        width: 200px;
+    }
+}
+
+.fundo-vermelho {
+    background-color: red;
+}
+
+.secao-desconto {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    text-align: center;
+}
+
+.valor-desconto {
+    font-size: 2.5rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+    .valor-desconto {
+        font-size: 2rem;
+    }
+}
+
+.palavra-sorteada {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    .palavra-sorteada {
+        font-size: 1.8rem;
+    }
+}
+
+.container-teclado {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    box-sizing: border-box;
+    grid-template-columns: repeat(10, 1fr);
+    width: 100%;
+    row-gap: 8px;
+}
+
+.botao-teclado {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 1px gray;
+    border: 1px solid dimgray;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-family: "Roboto", sans-serif;
+    transition: 0.1;
+}
+
+@media screen and (max-width: 480px) {
+    .botao-teclado {
+        width: 20px;
+        height: 20px;
+        font-size: 0.6rem;
+    }
+}
+
+.letra-errada {
+    background-color: red;
+}
+
+.letra-certa {
+    background-color: green;
+}
+
+.button-sortear {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0 20px;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+.container-dicas {
+    width: 100%;
+    margin-left: 30px;
+    padding: 0 10px 10px 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .container-dicas {
+        padding: 0px;
+        margin: 16px 0 0 0;
+    }
+}
+
+.button-padrao {
+    position: relative;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    width: 150px;
+    background-color: #154EBC;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .button-padrao {
+        height: 40px;
+        font-size: 0.8rem;
+        line-height: 40px;
+        width: 130px;
+    }
+}
+
+.titulo-dica {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.texto-dica {
+    height: 20px;
+    width: 80%;
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 24px;
+}
+
+@media screen and (max-width: 480px) {
+    .texto-dica {
+        width: 95%;
+        font-size: 0.8rem;
+    }
+}
+
+form label {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.lista-dicas {
+    padding: 0;
+}
+
+.lista-dicas li {
+    display: block;
+}
+
+.item-lista {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashes {
+    margin: 5px;
+  }
